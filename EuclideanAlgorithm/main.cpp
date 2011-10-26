@@ -157,7 +157,10 @@ void testLoop() // Loops through the test function for every number combination 
 	for (int iii = 1; iii <= 10000; iii++) {
 		for (int bbb = 1; bbb <= 10000; bbb++)
 		{
-			testGCD(iii, bbb);
+			testGCD(iii, bbb); // NOTE: Since this function is not verbose, it is not truly representative of the speed.
+                               // Non-verbose GCD calculations are 99% faster, but this difference (1/500 of a percent of
+                               // a second) is so negligible that, since verbose calculations are not used for mass computation,
+                               // the effective speed is pretty much the same.
             count++;
 		}
 	}
