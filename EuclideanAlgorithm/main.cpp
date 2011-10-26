@@ -21,8 +21,18 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <ctime>
+#include <iomanip>
+#include <cmath>
 
-// BEGIN ARGUMENT FUNCTIONS //
+// Begin argument functions.
+enum Command
+{
+	UNKNOWN_COMMAND,
+	COMMAND_GCD,
+	COMMAND_TEST
+};
+
 bool argMatch(int argc, char * const argv[], int argNum, std::string argTarget)
 {
 	if (argc > argNum)
@@ -32,20 +42,30 @@ bool argMatch(int argc, char * const argv[], int argNum, std::string argTarget)
 	return false; // Otherwise return false.
 }
 
-enum Command
+bool argIsNum(int argc, char * const argv[], int argNum)
 {
-	UNKNOWN_COMMAND,
-	COMMAND_GCD,
-	COMMAND_TEST
-};
+    if (argc > argNum) // If there's enough.
+    {
+        int nValue = atoi(argv[argNum]);
+        if (nValue == 0) { return false; } // Zero value means invalid or... zero... which we can't use.
+        if (nValue == INT_MAX || nValue == INT_MIN) { return false; } // Out of range.
+        else { return true; }
+    }
+    else { return false; }
+}
 
 Command argCheck(int argc, char * const argv[])
 {
 	if (argc == 1) { return UNKNOWN_COMMAND; }
-	else if (argMatch(argc, argv, 1, "--GCD")) { return COMMAND_GCD; }
-	else if (argMatch(argc, argv, 1, "--test")) { return COMMAND_TEST; }
+    else if (argc == 2) { if (argMatch(argc, argv, 1, "--test")) { return COMMAND_TEST; } } // If we have 1 arg and it's test, then test.
+	else if (argc == 4) // If we have 3 arguments.
+    {    
+        if (argMatch(argc, argv, 1, "--GCD") && argIsNum(argc, argv, 2) && argIsNum(argc, argv, 3)) { return COMMAND_GCD; }
+    }
 	else {return UNKNOWN_COMMAND; }
 }
+
+// End arg functions.
 
 int nGreater(int nA, int nB) // Function for finding the greater of two numbers.
 {
@@ -128,16 +148,26 @@ void testGCD(int iii, int bbb) // Test function.
 	
 }
 
-void testLoop() // Loops through the test function for every number combination 1 - 1000
+void testLoop() // Loops through the test function for every number combination 1 - 10000
 {
-	for (int iii = 1; iii <= 1000; iii++) {
-		for (int bbb = 1; bbb <= 1000; bbb++)
+    time_t start,end;
+    long double count = 0;
+    std::cout << "Testing..." << std::endl;
+    time(&start);
+	for (int iii = 1; iii <= 10000; iii++) {
+		for (int bbb = 1; bbb <= 10000; bbb++)
 		{
-			testGCD(iii, bbb);		
+			testGCD(iii, bbb);
+            count++;
 		}
 	}
+    time(&end);
+    int timediff = difftime(end, start);
+    long double secondsPerCalc = timediff / count;
 	// If the program didn't exit.
-	std::cout << "All tests completed sucessfully." << std::endl;
+    std::cout << std::setprecision(16);
+	std::cout << "All " << count << " tests completed sucessfully in " << timediff << " seconds." << std::endl;
+    std::cout << "Each GCD took about " << secondsPerCalc << " seconds." << std::endl;
 }
 
 int main(int argc, char * const argv[]) // Main function, of course.
@@ -147,23 +177,22 @@ int main(int argc, char * const argv[]) // Main function, of course.
 	switch (argCheck(argc, argv))
 	{
 		case UNKNOWN_COMMAND:
-        { cerr << "Improper usage!" << endl;
+            cerr << "Proper usage is: EuclideanAlgorithm <options> [INT1] [INT2]" << endl;
+            cerr << "OPTIONS: --GCD <INT1> <INT2>" << endl;
+            cerr << "               finds the GCD of the two integer inputs." << endl;
+            cerr << "         --test" << endl;
+            cerr << "               GCD's all integer combinations between 1 and 10,000." << endl;
+            cerr << endl;
+            cerr << "------ EUCLIDEAN ALGORITHM 1.1 ------" << endl;
+            cerr << "------- by Herbert F. Gilman --------" << endl;
 			exit (1);
-			break; }
-		case COMMAND_GCD:
-        { cout << "Enter the first INTEGER. ";
-			int nA = 0;
-			cin >> nA;
-			cout << endl;
-			cout << "Enter the second INTEGER. ";
-			int nB = 0;
-			cin >> nB;
-			cout << endl;
-			nGCD(nA, nB, true);
-			break; }
+			break; 
+        case COMMAND_GCD:
+            nGCD(atoi(argv[2]), atoi(argv[3]), true);
+			break; 
 		case COMMAND_TEST:
-        { testLoop();
-			break; }
+            testLoop();
+			break;
 	}
 	
 	return 0;
