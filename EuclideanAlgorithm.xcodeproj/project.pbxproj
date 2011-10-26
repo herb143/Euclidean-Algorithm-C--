@@ -10,6 +10,7 @@
 		E16FD28D1457618A00A0AAD0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E16FD28C1457618A00A0AAD0 /* main.cpp */; };
 		E16FD28F1457618A00A0AAD0 /* EuclideanAlgorithm.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = E16FD28E1457618A00A0AAD0 /* EuclideanAlgorithm.1 */; };
 		E1C2F2D31458C3A1006CCBDA /* argFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1C2F2D21458C3A1006CCBDA /* argFunctions.cpp */; };
+		E1C2F2D71458C54D006CCBDA /* numberFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1C2F2D61458C54D006CCBDA /* numberFunctions.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		E16FD28E1457618A00A0AAD0 /* EuclideanAlgorithm.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = EuclideanAlgorithm.1; sourceTree = "<group>"; };
 		E1C2F2D21458C3A1006CCBDA /* argFunctions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = argFunctions.cpp; sourceTree = "<group>"; };
 		E1C2F2D51458C44A006CCBDA /* argFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = argFunctions.h; sourceTree = "<group>"; };
+		E1C2F2D61458C54D006CCBDA /* numberFunctions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = numberFunctions.cpp; sourceTree = "<group>"; };
+		E1C2F2D81458C5A6006CCBDA /* numberFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = numberFunctions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				E16FD28C1457618A00A0AAD0 /* main.cpp */,
+				E1C2F2D61458C54D006CCBDA /* numberFunctions.cpp */,
+				E1C2F2D81458C5A6006CCBDA /* numberFunctions.h */,
 				E1C2F2D21458C3A1006CCBDA /* argFunctions.cpp */,
 				E1C2F2D51458C44A006CCBDA /* argFunctions.h */,
 				E16FD28E1457618A00A0AAD0 /* EuclideanAlgorithm.1 */,
@@ -120,6 +125,7 @@
 			files = (
 				E16FD28D1457618A00A0AAD0 /* main.cpp in Sources */,
 				E1C2F2D31458C3A1006CCBDA /* argFunctions.cpp in Sources */,
+				E1C2F2D71458C54D006CCBDA /* numberFunctions.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
