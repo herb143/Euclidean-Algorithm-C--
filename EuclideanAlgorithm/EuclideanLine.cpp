@@ -37,3 +37,11 @@ void EuclideanLine::prettyPrint()
 {
     std::cout << m_nDividend << " = " << m_nQuotient << "*" << m_nDiviser << "+" << m_nRemainder << std::endl;
 }
+
+/*std::string EuclideanLine::remainderSolved()
+{
+    using namespace std;
+    string theString;
+    ostringstream myStream (theString, ostringstream::out);
+
+} */

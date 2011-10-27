@@ -29,6 +29,7 @@ public:
     
     // Verbose function.
     void prettyPrint();
+    //std::string remainderSolved();
     
 };
 
