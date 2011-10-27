@@ -13,6 +13,7 @@
 		E1C2F2D71458C54D006CCBDA /* numberFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1C2F2D61458C54D006CCBDA /* numberFunctions.cpp */; };
 		E1C2F2DA1458CAD9006CCBDA /* testFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1C2F2D91458CAD9006CCBDA /* testFunctions.cpp */; };
 		E1C2F2DD1458CF68006CCBDA /* EuclideanLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1C2F2DC1458CF68006CCBDA /* EuclideanLine.cpp */; };
+		E1C2F2E01458D5A0006CCBDA /* gcdCalculation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1C2F2DF1458D5A0006CCBDA /* gcdCalculation.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		E1C2F2DB1458CB3C006CCBDA /* testFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testFunctions.h; sourceTree = "<group>"; };
 		E1C2F2DC1458CF68006CCBDA /* EuclideanLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EuclideanLine.cpp; sourceTree = "<group>"; };
 		E1C2F2DE1458D101006CCBDA /* EuclideanLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EuclideanLine.h; sourceTree = "<group>"; };
+		E1C2F2DF1458D5A0006CCBDA /* gcdCalculation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gcdCalculation.cpp; sourceTree = "<group>"; };
+		E1C2F2E11458D5B2006CCBDA /* gcdCalculation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdCalculation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 				E1C2F2DB1458CB3C006CCBDA /* testFunctions.h */,
 				E1C2F2D81458C5A6006CCBDA /* numberFunctions.h */,
 				E1C2F2D21458C3A1006CCBDA /* argFunctions.cpp */,
+				E1C2F2DF1458D5A0006CCBDA /* gcdCalculation.cpp */,
+				E1C2F2E11458D5B2006CCBDA /* gcdCalculation.h */,
 				E1C2F2DC1458CF68006CCBDA /* EuclideanLine.cpp */,
 				E1C2F2DE1458D101006CCBDA /* EuclideanLine.h */,
 				E1C2F2D51458C44A006CCBDA /* argFunctions.h */,
@@ -138,6 +143,7 @@
 				E1C2F2D71458C54D006CCBDA /* numberFunctions.cpp in Sources */,
 				E1C2F2DA1458CAD9006CCBDA /* testFunctions.cpp in Sources */,
 				E1C2F2DD1458CF68006CCBDA /* EuclideanLine.cpp in Sources */,
+				E1C2F2E01458D5A0006CCBDA /* gcdCalculation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
