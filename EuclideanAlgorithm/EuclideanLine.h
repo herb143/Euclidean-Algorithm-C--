@@ -27,6 +27,9 @@ public:
     int getQuotient() { return m_nQuotient; }
     int getRemainder() { return m_nRemainder; }
     
+    // Verbose function.
+    void prettyPrint();
+    
 };
 
 #endif

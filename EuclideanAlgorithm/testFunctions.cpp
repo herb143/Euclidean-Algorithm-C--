@@ -10,15 +10,17 @@
 #include <iomanip>
 #include <ctime>
 #include "numberFunctions.h"
+#include "EuclideanLine.h"
+#include "gcdCalculation.h"
 #include "testFunctions.h"
 
 void testGCD(int iii, int bbb) // Test function.
 {
-	int nGCDV = nGCD(iii, bbb); // Find GCD.
-	int nGCDWorks = iii / nGCDV;
-	int nGCDWorks2 = bbb / nGCDV;
-	if ((nGCDWorks2 * nGCDV != bbb) || (nGCDWorks * nGCDV != iii)) { // Verify GCD goes evenly into both.
-		std::cerr << "Error! GCD of " << iii << " and " << bbb << " was computed as " << nGCDV << std::endl; exit(1); }
+	gcdCalculation testCase(iii, bbb); // New GCD test case.
+	int nGCDWorks = iii / testCase.getGCD();
+	int nGCDWorks2 = bbb / testCase.getGCD();
+	if ((nGCDWorks2 * testCase.getGCD() != bbb) || (nGCDWorks * testCase.getGCD() != iii)) { // Verify GCD goes evenly into both.
+		std::cerr << "Error! GCD of " << iii << " and " << bbb << " was computed as " << testCase.getGCD() << std::endl; exit(1); }
 	
 }
 

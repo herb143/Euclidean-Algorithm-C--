@@ -24,11 +24,12 @@
 #include "argFunctions.h"
 #include "numberFunctions.h"
 #include "testFunctions.h"
+#include "EuclideanLine.h"
+#include "gcdCalculation.h"
 
 int main(int argc, char * const argv[]) // Main function, of course.
 {
 	using namespace std;
-	
 	switch (argCheck(argc, argv))
 	{
 		case UNKNOWN_COMMAND:
@@ -43,10 +44,11 @@ int main(int argc, char * const argv[]) // Main function, of course.
 			exit (1);
 			break; 
         case COMMAND_GCD:
-            nGCD(atoi(argv[2]), atoi(argv[3]), true);
+            gcdCalculation myCalculation(atoi(argv[2]), atoi(argv[3])); // Calculate the GCD.
+            myCalculation.prettyPrint(); // Pretty print it.
 			break; 
 		case COMMAND_TEST:
-            testLoop();
+             testLoop();
 			break;
 	}
 	

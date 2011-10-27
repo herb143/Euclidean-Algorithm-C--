@@ -32,3 +32,8 @@ EuclideanLine::EuclideanLine(int nDividend, int nDiviser) // Proper constructor.
     m_nQuotient = nQuotient(m_nDividend, m_nDiviser);
 	m_nRemainder = m_nDividend - (m_nDiviser * m_nQuotient);
 }
+
+void EuclideanLine::prettyPrint()
+{
+    std::cout << m_nDividend << " = " << m_nQuotient << "*" << m_nDiviser << "+" << m_nRemainder << std::endl;
+}
